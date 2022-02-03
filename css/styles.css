@@ -175,6 +175,18 @@ a {
 
 .current {
   color: var(--accent-color);
+  position: relative;
+}
+
+.current::after {
+  content: "";
+  width: 100%;
+  height: 4px;
+  position: absolute;
+  background-color: var(--accent-color);
+  left: 0;
+  bottom: -34px;
+  border-radius: 2px;
 }
 
 .header-link-mail,
@@ -192,6 +204,7 @@ a {
 .header-link-tel:hover,
 .header-link-tel:focus {
   color: var(--accent-color);
+  transition: color 250ms cubic-bezier(0.4, 0, 0.2, 1);
 }
 /* ----------------------------------main - section --------------------------------*/
 .main-container {
@@ -306,6 +319,7 @@ a {
 .field {
   padding-top: 94px;
   padding-bottom: 94px;
+  z-index: 1;
 }
 
 .field-title {
@@ -513,6 +527,9 @@ a {
 .portfolio-filtr-btn:focus {
   color: #ffffff;
   background-color: var(--accent-color);
+  transition: background-color 250ms cubic-bezier(0.4, 0, 0.2, 1),
+    color 250ms cubic-bezier(0.4, 0, 0.2, 1),
+    box-shadow 250ms cubic-bezier(0.4, 0, 0.2, 1);
 }
 
 /* ------------------------portfolio-gallery-list - section --------------------------*/
@@ -529,6 +546,7 @@ a {
   margin-top: 30px;
   margin-left: 30px;
   box-sizing: border-box;
+  position: relative;
 }
 
 .card {
@@ -539,6 +557,7 @@ a {
 .card:focus {
   box-shadow: 0px 1px 1px rgba(0, 0, 0, 0.12), 0px 4px 4px rgba(0, 0, 0, 0.06),
     1px 4px 6px rgba(0, 0, 0, 0.16);
+  transition: box-shadow 250ms cubic-bezier(0.4, 0, 0.2, 1);
 }
 
 .gallery-card-name {
@@ -565,6 +584,34 @@ a {
   line-height: 1.87;
   /*text-align: center;*/
   color: var(--primary-text-color);
+}
+
+/* ------------------------overley --------------------------------*/
+
+.portfolio-gallery-card-wrap {
+  position: relative;
+  overflow: auto;
+}
+
+.portfolio-gallery-card-overley {
+  position: absolute;
+  top: 0;
+  left: 0;
+  width: 100%;
+  height: 100%;
+  padding: 63px 24px;
+
+  font-size: 18px;
+  line-height: 1.56;
+  color: #ffffff;
+
+  background-color: var(--accent-color);
+  transform: translateY(100%);
+  transition: transform 250ms cubic-bezier(0.4, 0, 0.2, 1);
+}
+
+.portfolio-gallery-item:hover .portfolio-gallery-card-overley {
+  transform: translateY(0);
 }
 
 /* ------------------------.footer-logo - section --------------------------------*/
@@ -671,4 +718,67 @@ a {
 .footer-link-icon:hover,
 .footer-link-icon:focus {
   background-color: var(--accent-color);
+  transition: background-color 250ms cubic-bezier(0.4, 0, 0.2, 1);
+}
+
+/* ------------------------modal --------------------------------*/
+
+.backdrop {
+  width: 100vw;
+  height: 100vh;
+  background-color: rgba(0, 0, 0, 0.2);
+  position: fixed;
+  top: 0;
+  transition: opacity 500ms, visibility 500ms;
+}
+
+.is-hidden {
+  opacity: 0;
+  pointer-events: none;
+  visibility: hidden;
+}
+
+.backdrop.is-hidden .modal {
+  transform: rotate(-300deg) scale(0.5);
+}
+
+.modal {
+  width: 528px;
+  min-height: 581px;
+  background-color: #ffffff;
+  border-radius: 4px;
+  position: absolute;
+  top: 50%;
+  left: 50%;
+  transform: translate(-50%, -50%) rotate(0) scale(1);
+  transition: transform 500ms;
+  box-shadow: 0px 1px 3px rgba(0, 0, 0, 0.12), 0px 1px 1px rgba(0, 0, 0, 0.14),
+    0px 2px 1px rgba(0, 0, 0, 0.2);
+}
+
+.modal-close-btn {
+  display: flex;
+  width: 30px;
+  height: 30px;
+  border-radius: 50%;
+  border: 1px solid rgba(0, 0, 0, 0.1);
+  box-sizing: border-box;
+  background-color: transparent;
+  position: absolute;
+  top: 8px;
+  right: 8px;
+  justify-content: center;
+  align-items: center;
+}
+
+.close-icon-svg {
+  width: 18px;
+  height: 18px;
+  fill: black;
+}
+
+.modal-close-btn:hover,
+.modal-close-btn:focus {
+  background-color: var(--accent-color);
+  transition: background-color 250ms cubic-bezier(0.4, 0, 0.2, 1);
 }

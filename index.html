@@ -5,7 +5,7 @@
     <meta charset="UTF-8" />
     <meta http-equiv="X-UA-Compatible" content="IE=edge" />
     <meta name="viewport" content="width=device-width, initial-scale=1.0" />
-    <title>Home work4</title>
+    <title>Home work5</title>
     <link rel="preconnect" href="https://fonts.googleapis.com">
     <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
     <link
@@ -24,7 +24,7 @@
     <header class="header">
         <div class="container header-container">
         <nav class="navigation">
-            <a href="#" class="header-logo logo">
+            <a href="./index.html" class="header-logo logo">
             <span class="header-logo-primary">Web</span>
             <span class="header-logo-secondary">Studio</span>
             </a>
@@ -57,7 +57,7 @@
             <h1 class="hero-title">
                 Эффективные решения для вашего бизнеса
             </h1>
-            <button type="button" class="hero-btn">Заказать услугу</button>
+            <button type="button" class="hero-btn" data-modal-open>Заказать услугу</button>
         </div>  
         </section>
 
@@ -331,7 +331,7 @@
     <footer class="footer">
         <div class="container footer-container">
           <div class="footer-left">
-            <a href="#" class="footer-logo logo">
+            <a href="./index.html" class="footer-logo logo">
                 <span class="footer-logo-primary">Web</span>
                 <span class="footer-logo-secondary">Studio</span>
             </a>
@@ -384,6 +384,19 @@
           </div>
       </div>
     </footer>
+
+    <div class="backdrop is-hidden" data-modal>
+      <div class="modal">
+        <button type="button" class="modal-close-btn" data-modal-close>
+          <svg class="close-icon-svg">
+            <use href="./images/icons.svg#icon-close"></use>
+          </svg>
+        </button>
+      </div>
+    </div>
+
+  <script src="./js/modal.js"></script>
+
 </body>
 
 </html>
