@@ -101,6 +101,7 @@ a {
 }
 
 .logo {
+  display: flex;
   font-family: Raleway, csans-serif;
   color: var(--accent-color);
   font-size: 26px;
@@ -632,7 +633,6 @@ a {
 }
 
 .footer-logo {
-  display: block;
   margin-bottom: 20px;
 }
 
