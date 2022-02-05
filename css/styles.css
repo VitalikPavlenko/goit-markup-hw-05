@@ -172,6 +172,7 @@ a {
   color: var(--title-text-color);
   display: flex;
   align-items: center;
+  transition: color 250ms cubic-bezier(0.4, 0, 0.2, 1);
 }
 
 .current {
@@ -196,6 +197,7 @@ a {
   color: var(--text-kontact-header);
   display: flex;
   align-items: center;
+  transition: color 250ms cubic-bezier(0.4, 0, 0.2, 1);
 }
 
 .header-link:hover,
@@ -205,7 +207,6 @@ a {
 .header-link-tel:hover,
 .header-link-tel:focus {
   color: var(--accent-color);
-  transition: color 250ms cubic-bezier(0.4, 0, 0.2, 1);
 }
 /* ----------------------------------main - section --------------------------------*/
 .main-container {
@@ -265,6 +266,14 @@ a {
 
   border: none;
   color: var(--primary-white-color);
+  transition: background-color 250ms cubic-bezier(0.4, 0, 0.2, 1),
+    color 250ms cubic-bezier(0.4, 0, 0.2, 1);
+}
+
+.hero-btn:hover,
+.hero-btn:focus {
+  background-color: var(--background-wheit-color);
+  color: var(--accent-color);
 }
 
 /* ----------------------------------about - section --------------------------------*/
@@ -406,6 +415,7 @@ a {
   border-radius: 50%;
   justify-content: center;
   align-items: center;
+  transition: background-color 250ms cubic-bezier(0.4, 0, 0.2, 1);
 }
 
 .link-item + .link-item {
@@ -416,6 +426,7 @@ a {
   width: 44px;
   height: 44px;
   fill: #afb1b8;
+  transition: fill 250ms cubic-bezier(0.4, 0, 0.2, 1);
 }
 
 .link-icon:hover,
@@ -461,12 +472,14 @@ a {
   border-radius: 4px;
   justify-content: center;
   align-items: center;
+  transition: border 250ms cubic-bezier(0.4, 0, 0.2, 1);
 }
 
 .clients-icon-svg {
   width: 106px;
   height: 60px;
   fill: #afb1b8;
+  transition: fill 250ms cubic-bezier(0.4, 0, 0.2, 1);
 }
 
 .clients-icon:hover,
@@ -492,9 +505,9 @@ a {
   justify-content: center;
 }
 
-.portfolio-filtr-item {
+/*.portfolio-filtr-item {
   display: flex;
-}
+}*/
 
 .portfolio-filtr-btn {
   background-color: #f5f4fa;
@@ -512,12 +525,10 @@ a {
 
   color: var(--title-text-color);
   cursor: pointer;
-}
 
-.portfolio-filtr-btn:hover,
-.portfolio-filtr-btn:focus {
-  box-shadow: 0px 3px 1px rgba(0, 0, 0, 0.1), 0px 1px 2px rgba(0, 0, 0, 0.08),
-    0px 2px 2px rgba(0, 0, 0, 0.12);
+  transition: background-color 250ms cubic-bezier(0.4, 0, 0.2, 1),
+    color 250ms cubic-bezier(0.4, 0, 0.2, 1),
+    box-shadow 250ms cubic-bezier(0.4, 0, 0.2, 1);
 }
 
 .portfolio-filtr-item + .portfolio-filtr-item {
@@ -528,9 +539,8 @@ a {
 .portfolio-filtr-btn:focus {
   color: #ffffff;
   background-color: var(--accent-color);
-  transition: background-color 250ms cubic-bezier(0.4, 0, 0.2, 1),
-    color 250ms cubic-bezier(0.4, 0, 0.2, 1),
-    box-shadow 250ms cubic-bezier(0.4, 0, 0.2, 1);
+  box-shadow: 0px 3px 1px rgba(0, 0, 0, 0.1), 0px 1px 2px rgba(0, 0, 0, 0.08),
+    0px 2px 2px rgba(0, 0, 0, 0.12);
 }
 
 /* ------------------------portfolio-gallery-list - section --------------------------*/
@@ -552,13 +562,13 @@ a {
 
 .card {
   display: block;
+  transition: box-shadow 250ms cubic-bezier(0.4, 0, 0.2, 1);
 }
 
 .card:hover,
 .card:focus {
   box-shadow: 0px 1px 1px rgba(0, 0, 0, 0.12), 0px 4px 4px rgba(0, 0, 0, 0.06),
     1px 4px 6px rgba(0, 0, 0, 0.16);
-  transition: box-shadow 250ms cubic-bezier(0.4, 0, 0.2, 1);
 }
 
 .gallery-card-name {
@@ -591,7 +601,7 @@ a {
 
 .portfolio-gallery-card-wrap {
   position: relative;
-  overflow: auto;
+  overflow: hidden;
 }
 
 .portfolio-gallery-card-overley {
@@ -611,7 +621,7 @@ a {
   transition: transform 250ms cubic-bezier(0.4, 0, 0.2, 1);
 }
 
-.portfolio-gallery-item:hover .portfolio-gallery-card-overley {
+.card:hover .portfolio-gallery-card-overley {
   transform: translateY(0);
 }
 
@@ -703,6 +713,7 @@ a {
   justify-content: center;
   align-items: center;
   background-color: rgba(255, 255, 255, 0.1);
+  transition: background-color 250ms cubic-bezier(0.4, 0, 0.2, 1);
 }
 
 .footer-link-item + .footer-link-item {
@@ -718,7 +729,6 @@ a {
 .footer-link-icon:hover,
 .footer-link-icon:focus {
   background-color: var(--accent-color);
-  transition: background-color 250ms cubic-bezier(0.4, 0, 0.2, 1);
 }
 
 /* ------------------------modal --------------------------------*/
@@ -729,7 +739,8 @@ a {
   background-color: rgba(0, 0, 0, 0.2);
   position: fixed;
   top: 0;
-  transition: opacity 500ms, visibility 500ms;
+  transition: opacity 500ms cubic-bezier(0.4, 0, 0.2, 1),
+    visibility 500ms linear;
 }
 
 .is-hidden {
@@ -751,7 +762,7 @@ a {
   top: 50%;
   left: 50%;
   transform: translate(-50%, -50%) rotate(0) scale(1);
-  transition: transform 500ms;
+  transition: transform 500ms cubic-bezier(0.4, 0, 0.2, 1);
   box-shadow: 0px 1px 3px rgba(0, 0, 0, 0.12), 0px 1px 1px rgba(0, 0, 0, 0.14),
     0px 2px 1px rgba(0, 0, 0, 0.2);
 }
@@ -769,16 +780,22 @@ a {
   right: 8px;
   justify-content: center;
   align-items: center;
+  transition: border 250ms cubic-bezier(0.4, 0, 0.2, 1);
 }
 
 .close-icon-svg {
   width: 18px;
   height: 18px;
   fill: black;
+  transition: fill 250ms cubic-bezier(0.4, 0, 0.2, 1);
 }
 
 .modal-close-btn:hover,
 .modal-close-btn:focus {
-  background-color: var(--accent-color);
-  transition: background-color 250ms cubic-bezier(0.4, 0, 0.2, 1);
+  border: 2px solid var(--accent-color);
+}
+
+.modal-close-btn:hover .close-icon-svg,
+.modal-close-btn:focus .close-icon-svg {
+  fill: tomato;
 }
